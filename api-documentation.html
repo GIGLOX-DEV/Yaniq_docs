@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YaniQ E-Commerce Microservices API Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .status.active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.development {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+
+        .architecture-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+
+        .architecture-info h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>YaniQ E-Commerce Platform</h1>
+            <p>Comprehensive Microservices API Documentation</p>
+            <span class="version-badge">API Version 1.0.0</span>
+        </div>
+
+        <div class="architecture-info">
+            <h3>🏗️ Architecture Overview</h3>
+            <p>YaniQ is built using a modern microservices architecture with Spring Boot, featuring 22 specialized services that handle different aspects of the e-commerce platform. Each service is independently deployable and scalable.</p>
+            <div class="tech-stack">
+                <span class="tech-badge">Spring Boot 3.5.5</span>
+                <span class="tech-badge">Java 21</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">OAuth2</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Kubernetes</span>
+                <span class="tech-badge">Eureka</span>
+                <span class="tech-badge">OpenAPI 3.0</span>
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Authentication Service <span class="status active">Active</span></h3>
+                <p>Handles user authentication, OAuth2 authorization server, JWT token management, and password recovery.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8081/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8081/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>User Management Service <span class="status active">Active</span></h3>
+                <p>Manages user profiles, preferences, roles, permissions, and user lifecycle operations.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8082/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8082/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Product Service <span class="status development">In Development</span></h3>
+                <p>Product catalog management, inventory tracking, pricing, and product search functionality.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8083/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8083/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Order Service <span class="status development">In Development</span></h3>
+                <p>Order processing, order history, order status tracking, and order management workflows.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8084/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8084/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Payment Service <span class="status development">In Development</span></h3>
+                <p>Payment processing, payment methods management, refunds, and payment security.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8085/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8085/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Cart Service <span class="status development">In Development</span></h3>
+                <p>Shopping cart management, cart persistence, cart sharing, and cart optimization.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8086/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8086/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Inventory Service <span class="status development">In Development</span></h3>
+                <p>Stock management, inventory tracking, reorder alerts, and warehouse management.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8087/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8087/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Notification Service <span class="status active">Active</span></h3>
+                <p>Email, SMS, push notifications, notification templates, and communication preferences.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8088/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8088/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Analytics Service <span class="status development">In Development</span></h3>
+                <p>Business analytics, user behavior tracking, sales reports, and performance metrics.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8089/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8089/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Gateway Service <span class="status active">Active</span></h3>
+                <p>API Gateway, request routing, load balancing, rate limiting, and API security.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8080/swagger-ui.html" class="btn btn-primary" target="_blank">📚 Swagger UI</a>
+                    <a href="http://localhost:8080/api-docs" class="btn btn-secondary" target="_blank">📄 OpenAPI Spec</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Discovery Service <span class="status active">Active</span></h3>
+                <p>Service discovery, service registry, health checks, and microservice coordination.</p>
+                <div class="service-links">
+                    <a href="http://localhost:8761" class="btn btn-primary" target="_blank">🔍 Eureka Dashboard</a>
+                    <a href="http://localhost:8761/actuator/health" class="btn btn-secondary" target="_blank">💚 Health Check</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3><span class="service-icon"></span>Other Services <span class="status development">In Development</span></h3>
+                <p>Additional services: Shipping, Review, Search, Recommendation, Loyalty, Support, Admin, Billing, Catalog, File.</p>
+                <div class="service-links">
+                    <a href="#" class="btn btn-secondary">🚧 Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>YaniQ E-Commerce Platform</strong> - Built with ❤️ by the YaniQ Development Team</p>
+            <p>Contact: <a href="mailto:danukajihansanath0408@gmail.com">danukajihansanath0408@gmail.com</a></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                📖 <a href="/docs/ARCHITECTURE.md">Architecture Guide</a> |
+                🚀 <a href="/docs/DEPLOYMENT.md">Deployment Guide</a> |
+                🤝 <a href="/docs/CONTRIBUTING.md">Contributing</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

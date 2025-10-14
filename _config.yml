@@ -1,7 +1,7 @@
 title: YaniQ Enterprise E-Commerce Platform
 description: Comprehensive documentation for YaniQ - A cloud-native microservices-based e-commerce platform built with Spring Boot, Spring Cloud, and modern DevOps practices.
-baseurl: ""
-url: "https://giglox-dev.github.io/Yaniq_docs"
+baseurl: "/Yaniq_docs"
+url: "https://giglox-dev.github.io"
 
 remote_theme: just-the-docs/just-the-docs
 
@@ -33,8 +33,8 @@ aux_links:
     - "https://github.com/GIGLOX-DEV/YaniQ"
   "Report Issue":
     - "https://github.com/GIGLOX-DEV/Yaniq_docs/issues/new"
-  "API Documentation":
-    - "/api-documentation"
+  "Managed Documentation":
+    - "/managed-documentation"
 
 # Aux links open in new tab
 aux_links_new_tab: true
@@ -50,9 +50,6 @@ heading_anchors: true
 nav_external_links:
   - title: YaniQ Main Site
     url: https://yaniq.com
-    hide_icon: false
-  - title: Swagger API Docs
-    url: /swagger-ui.html
     hide_icon: false
 
 # Collections

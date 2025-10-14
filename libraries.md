@@ -3,7 +3,7 @@ layout: default
 title: Libraries
 nav_order: 5
 has_children: true
-permalink: /libraries
+permalink: /libraries/
 description: "Shared libraries and reusable components for YaniQ microservices"
 ---
 

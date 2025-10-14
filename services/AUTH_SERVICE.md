@@ -4,6 +4,7 @@ title: Auth Service
 parent: Services
 nav_order: 1
 description: "Authentication and authorization service documentation"
+permalink: /services/AUTH_SERVICE/
 ---
 
 # 🔐 Auth Service Documentation

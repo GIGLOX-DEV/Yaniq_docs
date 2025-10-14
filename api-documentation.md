@@ -3,7 +3,7 @@ layout: default
 title: API Documentation
 nav_order: 4
 description: "Complete REST API reference for YaniQ microservices"
-permalink: /api-documentation
+permalink: /api-documentation/
 ---
 
 # API Documentation
@@ -372,4 +372,3 @@ Official SDK support (coming soon):
 
 {: .highlight }
 > For production use, always use HTTPS and never expose sensitive credentials in your code or logs.
-

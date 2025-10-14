@@ -3,7 +3,7 @@ layout: default
 title: Messaging Guide
 nav_order: 11
 description: "Event-driven architecture and messaging patterns"
-permalink: /MESSAGING_GUIDE
+permalink: /MESSAGING_GUIDE/
 ---
 
 # 📨 Messaging Guide
@@ -201,4 +201,3 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 - Join our community chat
 
 Thank you for contributing! 🎉
-

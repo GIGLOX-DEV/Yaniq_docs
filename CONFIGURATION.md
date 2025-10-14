@@ -3,7 +3,7 @@ layout: default
 title: Configuration
 nav_order: 7
 description: "Configuration management for YaniQ services"
-permalink: /CONFIGURATION
+permalink: /CONFIGURATION/
 ---
 
 # ⚙️ Configuration Guide

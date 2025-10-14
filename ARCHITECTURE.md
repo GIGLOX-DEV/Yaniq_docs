@@ -3,7 +3,7 @@ layout: default
 title: Architecture
 nav_order: 6
 description: "System architecture and design patterns for YaniQ platform"
-permalink: /ARCHITECTURE
+permalink: /ARCHITECTURE/
 ---
 
 # 🏗️ System Architecture

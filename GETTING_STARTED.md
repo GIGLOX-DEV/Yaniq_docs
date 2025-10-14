@@ -3,7 +3,7 @@ layout: default
 title: Getting Started
 nav_order: 2
 description: "Quick setup guide for YaniQ E-Commerce Platform"
-permalink: /GETTING_STARTED
+permalink: /GETTING_STARTED/
 ---
 
 # 🚀 Getting Started Guide

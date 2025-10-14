@@ -3,7 +3,7 @@ layout: default
 title: Services
 nav_order: 3
 has_children: true
-permalink: /services
+permalink: /services/
 description: "Complete documentation for all YaniQ microservices"
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Deployment
 nav_order: 8
 description: "Production deployment guide for YaniQ platform"
-permalink: /DEPLOYMENT
+permalink: /DEPLOYMENT/
 ---
 
 # 🚀 Deployment Guide

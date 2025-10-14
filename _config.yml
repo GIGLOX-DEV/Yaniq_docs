@@ -5,6 +5,12 @@ url: "https://giglox-dev.github.io/Yaniq_docs"
 
 remote_theme: just-the-docs/just-the-docs
 
+# Markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 color_scheme: auto
 search_enabled: true
 search:
@@ -81,6 +87,11 @@ defaults:
     values:
       layout: "default"
       parent: "Guides"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 
 # Enable plugins
 plugins:
@@ -89,6 +100,19 @@ plugins:
   - jekyll-github-metadata
   - jekyll-include-cache
   - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - deploy.sh
+  - DEPLOYMENT_SUMMARY.md
+  - README.md
 
 # SEO settings
 github:

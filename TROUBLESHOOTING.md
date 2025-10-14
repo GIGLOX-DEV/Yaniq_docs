@@ -3,7 +3,7 @@ layout: default
 title: Troubleshooting
 nav_order: 9
 description: "Common issues and solutions for YaniQ platform"
-permalink: /TROUBLESHOOTING
+permalink: /TROUBLESHOOTING/
 ---
 
 # 🔧 Troubleshooting Guide
@@ -166,4 +166,3 @@ If you can't find a solution:
 ---
 
 [⬆ Back to Top](#-troubleshooting-guide) | [📖 Home](/)
-

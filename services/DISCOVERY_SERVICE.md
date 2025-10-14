@@ -1,6 +1,15 @@
+---
+layout: default
+title: Discovery Service
+parent: Services
+nav_order: 1
+description: "Service registry and discovery with Netflix Eureka"
+permalink: /services/DISCOVERY_SERVICE/
+---
+
 # 🔍 Discovery Service Documentation
 
-<div align="center">
+<div class="text-center">
 
 ![Service Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
 ![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-Netflix%20Eureka-green?style=for-the-badge)
@@ -12,7 +21,7 @@
 [Architecture](#-architecture) •
 [Configuration](#-configuration) •
 [API Reference](#-api-reference) •
-[Monitoring](#-monitoring)
+[Monitoring & Health](#monitoring-health)
 
 </div>
 
@@ -27,8 +36,8 @@
 - [Configuration](#-configuration)
 - [Getting Started](#-getting-started)
 - [API Reference](#-api-reference)
-- [Monitoring & Health](#-monitoring--health)
-- [High Availability](#-high-availability)
+- [Monitoring & Health](#monitoring-health)
+- [High Availability](#high-availability)
 - [Troubleshooting](#-troubleshooting)
 - [Production Deployment](#-production-deployment)
 
@@ -452,7 +461,7 @@ DELETE http://localhost:8761/eureka/apps/{SERVICE-NAME}/{INSTANCE-ID}
 
 ---
 
-## 📊 Monitoring & Health
+## 📊 Monitoring & Health {: #monitoring-health }
 
 ### Health Check Endpoints
 
@@ -558,7 +567,7 @@ eureka:
 
 ---
 
-## 🏢 High Availability Setup
+## 🏢 High Availability Setup {: #high-availability }
 
 ### Multi-Instance Cluster
 
@@ -813,11 +822,10 @@ For issues and questions:
 
 ---
 
-<div align="center">
+<div class="text-center">
 
 **Discovery Service** | **Status**: ✅ Production Ready
 
-[⬆ Back to Top](#-discovery-service-documentation) | [📖 Main Documentation](../README.md)
+[⬆ Back to Top](#-discovery-service-documentation) | [📖 Main Documentation]({{ site.baseurl }}/)
 
 </div>
-

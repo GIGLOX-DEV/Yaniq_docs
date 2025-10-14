@@ -101,7 +101,7 @@ logger.info("User authenticated | userId: {} | duration: {}ms", userId, duration
 logger.performance("database_query", 150, "Table: {} | Records: {}", tableName, count);
 ```
 
-📖 **[Complete Documentation](./logging/common-logging-api.md)**
+📖 **[Complete Documentation](common-logging/common-logging-api.md)**
 
 ---
 
@@ -592,7 +592,7 @@ cd common-newlibrary
 
 | Library | API Docs | Usage Guide | Best Practices |
 |---------|----------|-------------|----------------|
-| **Common Logging** | [API Reference](./logging/common-logging-api.md) | [Usage Guide](./logging/common-logging-usage.md) | [Best Practices](./logging/common-logging-best-practices.md) |
+| **Common Logging** | [API Reference](common-logging/common-logging-api.md) | [Usage Guide](common-logging/common-logging-usage.md) | [Best Practices](common-logging/common-logging-best-practices.md) |
 | **Common Audit** | Coming Soon | Coming Soon | Coming Soon |
 | **Common Exceptions** | Coming Soon | Coming Soon | Coming Soon |
 | **Common Messaging** | Coming Soon | Coming Soon | Coming Soon |

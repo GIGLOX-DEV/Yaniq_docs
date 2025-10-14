@@ -39,7 +39,7 @@ Netflix Eureka-based service registry for dynamic service discovery and health m
 - Load balancing support
 - Self-preservation mode
 
-[View Documentation →](/services/DISCOVERY_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/DISCOVERY_SERVICE)
 
 ---
 
@@ -54,7 +54,7 @@ Spring Cloud Gateway providing API routing, authentication, rate limiting, and c
 - Circuit breaker pattern
 - CORS configuration
 
-[View Documentation →](/services/GATEWAY_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/GATEWAY_SERVICE)
 
 ---
 
@@ -69,7 +69,7 @@ Authentication and authorization service with OAuth2 and JWT token management.
 - Role-based access control (RBAC)
 - Password management
 
-[View Documentation →](/services/AUTH_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/AUTH_SERVICE)
 
 ---
 
@@ -84,7 +84,7 @@ Multi-channel notification service supporting email, SMS, and push notifications
 - Template management
 - Notification history
 
-[View Documentation →](/services/NOTIFICATION_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/NOTIFICATION_SERVICE)
 
 ---
 
@@ -103,7 +103,7 @@ User profile and account management service.
 - Preference management
 - Account deletion
 
-[View Documentation →](/services/USER_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/USER_SERVICE)
 
 ---
 
@@ -118,7 +118,7 @@ Product catalog and inventory management.
 - Image management
 - Pricing and discounts
 
-[View Documentation →](/services/PRODUCT_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/PRODUCT_SERVICE)
 
 ---
 
@@ -133,7 +133,7 @@ Shopping cart management with session persistence.
 - Session management
 - Cart abandonment tracking
 
-[View Documentation →](/services/CART_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/CART_SERVICE)
 
 ---
 
@@ -148,7 +148,7 @@ Order processing and lifecycle management.
 - Invoice generation
 - Order cancellation
 
-[View Documentation →](/services/ORDER_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/ORDER_SERVICE)
 
 ---
 
@@ -163,7 +163,7 @@ Payment processing with multiple payment gateway integrations.
 - Refund management
 - Payment history
 
-[View Documentation →](/services/PAYMENT_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/PAYMENT_SERVICE)
 
 ---
 
@@ -178,7 +178,7 @@ Real-time inventory and stock management.
 - Reservation system
 - Stock history
 
-[View Documentation →](/services/INVENTORY_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/INVENTORY_SERVICE)
 
 ---
 
@@ -193,7 +193,7 @@ Shipping and logistics management.
 - Delivery scheduling
 - Returns processing
 
-[View Documentation →](/services/SHIPPING_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/SHIPPING_SERVICE)
 
 ---
 
@@ -212,7 +212,7 @@ Business intelligence and analytics service.
 - Custom reports
 - Data visualization
 
-[View Documentation →](/services/ANALYTICS_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/ANALYTICS_SERVICE)
 
 ---
 
@@ -227,7 +227,7 @@ Elasticsearch-powered product search and filtering.
 - Search analytics
 - Relevance tuning
 
-[View Documentation →](/services/SEARCH_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/SEARCH_SERVICE)
 
 ---
 
@@ -242,7 +242,7 @@ Product reviews and ratings management.
 - Helpful votes
 - Review analytics
 
-[View Documentation →](/services/REVIEW_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/REVIEW_SERVICE)
 
 ---
 
@@ -257,7 +257,7 @@ AI-powered product recommendations.
 - Cross-sell/upsell
 - Collaborative filtering
 
-[View Documentation →](/services/RECOMMENDATION_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/RECOMMENDATION_SERVICE)
 
 ---
 
@@ -272,7 +272,7 @@ Promotions, discounts, and coupon management.
 - Flash sales
 - Loyalty rewards
 
-[View Documentation →](/services/PROMOTION_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/PROMOTION_SERVICE)
 
 ---
 
@@ -287,7 +287,7 @@ Customer loyalty and rewards program.
 - Referral program
 - Gamification
 
-[View Documentation →](/services/LOYALTY_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/LOYALTY_SERVICE)
 
 ---
 
@@ -302,7 +302,7 @@ Customer support and ticketing system.
 - Support analytics
 - SLA tracking
 
-[View Documentation →](/services/SUPPORT_SERVICE)
+[View Documentation →]({{ site.baseurl }}/services/SUPPORT_SERVICE)
 
 ---
 
@@ -327,7 +327,7 @@ Services communicate through:
 - **Service Discovery:** Eureka for dynamic service location
 - **Circuit Breaking:** Resilience4j for fault tolerance
 
-[Learn more about communication patterns →](/MESSAGING_GUIDE)
+[Learn more about communication patterns →]({{ site.baseurl }}/MESSAGING_GUIDE)
 
 ---
 
@@ -346,7 +346,7 @@ Service/
 └── Tests              → Unit & integration tests
 ```
 
-[View Architecture Details →](/ARCHITECTURE)
+[View Architecture Details →]({{ site.baseurl }}/ARCHITECTURE)
 
 ---
 
@@ -370,17 +370,17 @@ cd apps/gateway-service && mvn spring-boot:run
 # Run other services...
 ```
 
-[View Complete Getting Started Guide →](/GETTING_STARTED)
+[View Complete Getting Started Guide →]({{ site.baseurl }}/GETTING_STARTED)
 
 ---
 
 ## 📚 Related Documentation
 
-- [Architecture Overview](/ARCHITECTURE) - System design patterns
-- [Configuration Guide](/CONFIGURATION) - Service configuration
-- [Deployment Guide](/DEPLOYMENT) - Production deployment
-- [API Documentation](/api-documentation) - REST API reference
-- [Messaging Guide](/MESSAGING_GUIDE) - Event-driven patterns
+- [Architecture Overview]({{ site.baseurl }}/ARCHITECTURE) - System design patterns
+- [Configuration Guide]({{ site.baseurl }}/CONFIGURATION) - Service configuration
+- [Deployment Guide]({{ site.baseurl }}/DEPLOYMENT) - Production deployment
+- [API Documentation]({{ site.baseurl }}/API/api-documentation) - REST API reference
+- [Messaging Guide]({{ site.baseurl }}/MESSAGING_GUIDE) - Event-driven patterns
 
 ---
 

@@ -21,8 +21,8 @@ search:
   button: true
 
 # Logo and favicon
-logo: "/assets/images/logo.png"
-favicon_ico: "/assets/images/favicon.ico"
+logo: "{{ site.baseurl }}/assets/images/logo.png"
+favicon_ico: "{{ site.baseurl }}/assets/images/favicon.ico"
 
 # Footer content
 footer_content: "<p>© 2024-2025 YaniQ Enterprise. Licensed under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache License 2.0</a>. Built with ❤️ using Spring Boot & Spring Cloud.</p><p>For support, visit <a href='https://github.com/GIGLOX-DEV/Yaniq_docs/issues'>GitHub Issues</a></p>"
@@ -31,10 +31,8 @@ footer_content: "<p>© 2024-2025 YaniQ Enterprise. Licensed under <a href='https
 aux_links:
   "GitHub Repository":
     - "https://github.com/GIGLOX-DEV/YaniQ"
-  "Report Issue":
-    - "https://github.com/GIGLOX-DEV/Yaniq_docs/issues/new"
   "Managed Documentation":
-    - "/managed-documentation"
+    - "{{ site.baseurl }}/managed-documentation"
 
 # Aux links open in new tab
 aux_links_new_tab: true
@@ -110,6 +108,7 @@ exclude:
   - deploy.sh
   - DEPLOYMENT_SUMMARY.md
   - README.md
+  - CONTRIBUTING.md
 
 # SEO settings
 github:

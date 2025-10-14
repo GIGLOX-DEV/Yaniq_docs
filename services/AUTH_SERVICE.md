@@ -2,14 +2,14 @@
 layout: default
 title: Auth Service
 parent: Services
-nav_order: 1
+nav_order: 3
 description: "Authentication and authorization service documentation"
 permalink: /services/AUTH_SERVICE/
 ---
 
 # 🔐 Auth Service Documentation
 
-<div align="center">
+<div class="text-center">
 
 ![Service Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
 ![Security](https://img.shields.io/badge/Security-OAuth2%20%2B%20JWT-red?style=for-the-badge)
@@ -21,7 +21,7 @@ permalink: /services/AUTH_SERVICE/
 
 ---
 
-## 📋 Overview
+## 🗂️ Overview
 
 The **Auth Service** handles all authentication and authorization concerns for the YaniQ platform. It provides secure user authentication, JWT token management, and role-based access control.
 
@@ -36,7 +36,7 @@ The **Auth Service** handles all authentication and authorization concerns for t
 
 ---
 
-## 🎯 Authentication Flow
+## 🧭 Authentication Flow
 
 ```mermaid
 sequenceDiagram
@@ -148,7 +148,7 @@ Content-Type: application/json
 
 ---
 
-## 🔧 Configuration
+## ⚙️ Configuration
 
 ### JWT Configuration
 
@@ -234,7 +234,7 @@ CREATE INDEX idx_refresh_tokens_user_id ON refresh_tokens(user_id);
 
 ---
 
-## 🔒 Security Implementation
+## 🔐 Security Implementation
 
 ### Password Hashing
 
@@ -325,7 +325,7 @@ curl http://localhost:8080/api/users/me \
 
 ---
 
-## 📊 Monitoring
+## 📈 Monitoring
 
 ```bash
 # Health check
@@ -340,285 +340,10 @@ curl http://localhost:8081/actuator/metrics/auth.active.sessions
 
 ---
 
-<div align="center">
+<div class="text-center">
 
 **Auth Service** | **Status**: 🚧 In Development
 
-[⬆ Back to Services](../README.md#-services) | [📖 Main Documentation](../README.md)
-
-</div>
-# 🌐 Gateway Service Documentation
-
-<div align="center">
-
-![Service Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
-![Spring Cloud Gateway](https://img.shields.io/badge/Spring%20Cloud-Gateway-green?style=for-the-badge)
-![Port](https://img.shields.io/badge/Port-8080-blue?style=for-the-badge)
-
-**API Gateway for YaniQ Microservices Platform**
-
-</div>
-
----
-
-## 📋 Overview
-
-The **Gateway Service** serves as the single entry point for all client requests in the YaniQ platform. Built on **Spring Cloud Gateway**, it provides intelligent routing, load balancing, security, and cross-cutting concerns for all microservices.
-
-### Key Responsibilities
-
-- 🌐 **Request Routing** - Route requests to appropriate microservices
-- 🔒 **Authentication** - Validate JWT tokens
-- ⚖️ **Load Balancing** - Distribute requests across service instances
-- 🚦 **Rate Limiting** - Prevent API abuse
-- 🔄 **Circuit Breaking** - Handle service failures gracefully
-- 📊 **Monitoring** - Track request metrics and logs
-- 🌍 **CORS Handling** - Manage cross-origin requests
-
----
-
-## 🎯 Features
-
-### ✅ Dynamic Routing
-- Service discovery integration with Eureka
-- Predicate-based routing rules
-- Path rewriting and URI manipulation
-
-### ✅ Security
-- JWT token validation
-- Role-based access control
-- API key authentication for external APIs
-
-### ✅ Resilience
-- Circuit breaker integration
-- Retry mechanisms
-- Timeout configuration
-- Fallback responses
-
-### ✅ Rate Limiting
-- Redis-backed rate limiting
-- Per-user/IP rate limits
-- Configurable limits per endpoint
-
-### ✅ Request/Response Transformation
-- Header manipulation
-- Request/response filtering
-- Protocol conversion
-
----
-
-## ⚙️ Configuration
-
-### Route Configuration
-
-**File**: `config/gateway-service.yml`
-
-```yaml
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      
-      routes:
-        # Authentication Routes
-        - id: auth-service
-          uri: lb://auth-service
-          predicates:
-            - Path=/api/auth/**
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
-        
-        # User Service Routes
-        - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/api/users/**
-          filters:
-            - StripPrefix=1
-            - name: CircuitBreaker
-              args:
-                name: userServiceCircuitBreaker
-                fallbackUri: forward:/fallback/users
-        
-        # Product Service Routes
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-            - Path=/api/products/**
-          filters:
-            - StripPrefix=1
-            - name: Retry
-              args:
-                retries: 3
-                statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE
-                methods: GET
-                backoff:
-                  firstBackoff: 10ms
-                  maxBackoff: 50ms
-                  factor: 2
-```
-
-### Rate Limiting Configuration
-
-```yaml
-spring:
-  redis:
-    host: ${REDIS_HOST:localhost}
-    port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:}
-
-  cloud:
-    gateway:
-      filter:
-        request-rate-limiter:
-          redis-rate-limiter:
-            replenish-rate: 100  # Tokens per second
-            burst-capacity: 200  # Maximum burst size
-```
-
-### CORS Configuration
-
-```yaml
-spring:
-  cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowed-origins:
-              - "http://localhost:3000"
-              - "https://app.yaniq.com"
-            allowed-methods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
-              - PATCH
-              - OPTIONS
-            allowed-headers: "*"
-            exposed-headers:
-              - Authorization
-            allow-credentials: true
-            max-age: 3600
-```
-
----
-
-## 🚀 Running the Service
-
-### Prerequisites
-- Discovery Service running on port 8761
-- Redis running (for rate limiting)
-
-### Start the Service
-
-```bash
-# Using Maven
-cd apps/gateway-service
-mvn spring-boot:run
-
-# Using Docker
-docker-compose up -d gateway-service
-
-# Verify
-curl http://localhost:8080/actuator/health
-```
-
----
-
-## 📡 API Endpoints
-
-### Gateway Management
-
-```bash
-# List all routes
-GET http://localhost:8080/actuator/gateway/routes
-
-# Get specific route
-GET http://localhost:8080/actuator/gateway/routes/{id}
-
-# Refresh routes
-POST http://localhost:8080/actuator/gateway/refresh
-```
-
-### Example Requests
-
-```bash
-# Login through gateway
-curl -X POST http://localhost:8080/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"username":"user","password":"pass"}'
-
-# Get products through gateway
-curl http://localhost:8080/api/products \
-  -H "Authorization: Bearer {token}"
-
-# Get user profile through gateway
-curl http://localhost:8080/api/users/me \
-  -H "Authorization: Bearer {token}"
-```
-
----
-
-## 🔐 Security Integration
-
-### JWT Filter
-
-```java
-@Component
-public class JwtAuthenticationFilter implements GatewayFilter {
-    
-    @Override
-    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        String token = extractToken(exchange.getRequest());
-        
-        if (token != null && jwtUtil.validateToken(token)) {
-            return chain.filter(exchange);
-        }
-        
-        exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-        return exchange.getResponse().setComplete();
-    }
-}
-```
-
----
-
-## 📊 Monitoring
-
-### Metrics
-
-```bash
-# Gateway metrics
-curl http://localhost:8080/actuator/metrics/gateway.requests
-
-# Route-specific metrics
-curl http://localhost:8080/actuator/metrics/spring.cloud.gateway.requests
-```
-
----
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-1. **503 Service Unavailable** - Check if backend services are registered with Eureka
-2. **CORS Errors** - Verify CORS configuration
-3. **Rate Limit Exceeded** - Check Redis connection and rate limit configuration
-
----
-
-<div align="center">
-
-**Gateway Service** | **Status**: 🚧 In Development
-
-[⬆ Back to Services](../README.md#-services) | [📖 Main Documentation](../README.md)
+[⬅ Back to Services]({{ site.baseurl }}/services/) | [🏠 Home]({{ site.baseurl }}/)
 
 </div>

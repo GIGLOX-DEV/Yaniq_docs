@@ -46,7 +46,7 @@ Standardized REST API components, DTOs, and utilities.
 - API versioning utilities
 - Exception handling
 
-[View Documentation →](/libraries/common-api)
+[View Documentation →]({{ site.baseurl }}/libraries/common-api)
 
 ---
 
@@ -62,7 +62,7 @@ Audit logging and change tracking for all entities.
 - Audit event listeners
 - Compliance reporting
 
-[View Documentation →](/libraries/common-audit)
+[View Documentation →]({{ site.baseurl }}/libraries/common-audit)
 
 ---
 
@@ -78,7 +78,7 @@ Redis-based caching abstractions and utilities.
 - Cache invalidation strategies
 - Cache warming utilities
 
-[View Documentation →](/libraries/common-cache)
+[View Documentation →]({{ site.baseurl }}/libraries/common-cache)
 
 ---
 
@@ -94,7 +94,7 @@ Shared configuration classes and utilities.
 - Redis configuration
 - Common beans
 
-[View Documentation →](/libraries/common-config)
+[View Documentation →]({{ site.baseurl }}/libraries/common-config)
 
 ---
 
@@ -112,7 +112,7 @@ Kafka event publishing and consumption utilities.
 - Dead letter queue handling
 - Retry mechanisms
 
-[View Documentation →](/libraries/common-messaging)
+[View Documentation →]({{ site.baseurl }}/libraries/common-messaging)
 
 ---
 
@@ -128,7 +128,7 @@ Domain event definitions and event sourcing support.
 - Event replay utilities
 - Event store integration
 
-[View Documentation →](/libraries/common-events)
+[View Documentation →]({{ site.baseurl }}/libraries/common-events)
 
 ---
 
@@ -144,7 +144,7 @@ Shared Data Transfer Objects used across services.
 - Serialization support
 - API contracts
 
-[View Documentation →](/libraries/common-dto)
+[View Documentation →]({{ site.baseurl }}/libraries/common-dto)
 
 ---
 
@@ -160,7 +160,7 @@ Shared domain models and entities.
 - Domain exceptions
 - Entity builders
 
-[View Documentation →](/libraries/common-models)
+[View Documentation →]({{ site.baseurl }}/libraries/common-models)
 
 ---
 
@@ -178,7 +178,7 @@ Security utilities and authentication components.
 - Security context management
 - Role-based access utilities
 
-[View Documentation →](/libraries/common-security)
+[View Documentation →]({{ site.baseurl }}/libraries/common-security)
 
 ---
 
@@ -194,7 +194,7 @@ Custom validators and validation utilities.
 - Validation groups
 - Error message handling
 
-[View Documentation →](/libraries/common-validation)
+[View Documentation →]({{ site.baseurl }}/libraries/common-validation)
 
 ---
 
@@ -212,7 +212,7 @@ General-purpose utility classes.
 - Encryption/decryption helpers
 - ID generators
 
-[View Documentation →](/libraries/common-utils)
+[View Documentation →]({{ site.baseurl }}/libraries/common-utils)
 
 ---
 
@@ -228,7 +228,7 @@ Standardized exception hierarchy and error handling.
 - Error codes
 - Exception mappers
 
-[View Documentation →](/libraries/common-exceptions)
+[View Documentation →]({{ site.baseurl }}/libraries/common-exceptions)
 
 ---
 
@@ -244,7 +244,7 @@ Structured logging and correlation ID management.
 - Performance logging
 - Request/response logging
 
-[View Documentation →](/libraries/common-logging)
+[View Documentation →]({{ site.baseurl }}/libraries/common-logging)
 
 ---
 
@@ -260,7 +260,7 @@ Testing utilities and base test classes.
 - Integration test utilities
 - Performance test helpers
 
-[View Documentation →](/libraries/common-test)
+[View Documentation →]({{ site.baseurl }}/libraries/common-test)
 
 ---
 
@@ -462,10 +462,9 @@ Each library includes:
 
 ## 🔗 Related Documentation
 
-- [Architecture Overview](/ARCHITECTURE) - System architecture
-- [Getting Started](/GETTING_STARTED) - Development setup
-- [Services Overview](/services) - All microservices
-- [Contributing Guide](/CONTRIBUTING) - Contribution guidelines
+- [Architecture Overview]({{ site.baseurl }}/ARCHITECTURE) - System architecture
+- [Getting Started]({{ site.baseurl }}/GETTING_STARTED) - Development setup
+- [Services Overview]({{ site.baseurl }}/services) - All microservices
 
 ---
 

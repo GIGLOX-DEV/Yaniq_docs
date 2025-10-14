@@ -1,3 +1,11 @@
+---
+layout: default
+title: Configuration
+nav_order: 7
+description: "Configuration management for YaniQ services"
+permalink: /CONFIGURATION
+---
+
 # ⚙️ Configuration Guide
 
 <div align="center">
@@ -810,4 +818,3 @@ curl -X POST http://localhost:8081/actuator/refresh
 [⬆ Back to Top](#️-configuration-guide) | [📖 Main Documentation](./README.md)
 
 </div>
-

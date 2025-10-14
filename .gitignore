@@ -1,0 +1,25 @@
+# Exclude from processing
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+.bundle/
+.DS_Store
+Gemfile.lock
+
+# Build directory
+_site/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node modules (if using any npm packages)
+node_modules/
+
+# Logs
+*.log
+

@@ -1,4 +1,12 @@
- # 🚀 Deployment Guide
+---
+layout: default
+title: Deployment
+nav_order: 8
+description: "Production deployment guide for YaniQ platform"
+permalink: /DEPLOYMENT
+---
+
+# 🚀 Deployment Guide
 
 <div align="center">
 
@@ -895,4 +903,3 @@ crontab -e
 [⬆ Back to Top](#-deployment-guide) | [📖 Main Documentation](./README.md)
 
 </div>
-

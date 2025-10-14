@@ -1,3 +1,11 @@
+---
+layout: default
+title: Getting Started
+nav_order: 2
+description: "Quick setup guide for YaniQ E-Commerce Platform"
+permalink: /GETTING_STARTED
+---
+
 # 🚀 Getting Started Guide
 
 <div align="center">
@@ -800,4 +808,3 @@ rm -rf ~/.m2/repository/com/yaniq
 [⬆ Back to Top](#-getting-started-guide) | [📖 Main Documentation](./README.md)
 
 </div>
-

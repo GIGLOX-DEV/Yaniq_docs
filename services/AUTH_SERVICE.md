@@ -1,3 +1,11 @@
+---
+layout: default
+title: Auth Service
+parent: Services
+nav_order: 1
+description: "Authentication and authorization service documentation"
+---
+
 # 🔐 Auth Service Documentation
 
 <div align="center">
@@ -613,4 +621,3 @@ curl http://localhost:8080/actuator/metrics/spring.cloud.gateway.requests
 [⬆ Back to Services](../README.md#-services) | [📖 Main Documentation](../README.md)
 
 </div>
-

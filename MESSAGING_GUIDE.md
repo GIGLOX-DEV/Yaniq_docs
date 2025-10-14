@@ -1,195 +1,204 @@
-# Inter-Service Messaging Guide
+---
+layout: default
+title: Messaging Guide
+nav_order: 11
+description: "Event-driven architecture and messaging patterns"
+permalink: /MESSAGING_GUIDE
+---
 
-This guide explains how to send messages between services using RabbitMQ and Kafka in the YaniQ microservices architecture.
+# 📨 Messaging Guide
 
-## Overview
+Comprehensive guide to event-driven architecture and messaging patterns in YaniQ.
 
-The common-messaging library provides a unified way to send messages between services using both Kafka and RabbitMQ message brokers. The system supports:
+## 🎯 Overview
 
-- **Kafka**: High-throughput, partitioned messaging for event streaming
-- **RabbitMQ**: Traditional message queuing with routing and exchange patterns
+YaniQ uses **Apache Kafka** for asynchronous, event-driven communication between microservices.
 
-## Quick Start
+## 📋 Event Types
 
-### 1. Inject the Messaging Service
+### Order Events
+- `order.created` - New order placed
+- `order.confirmed` - Order confirmed
+- `order.shipped` - Order shipped
+- `order.delivered` - Order delivered
+- `order.cancelled` - Order cancelled
+
+### Payment Events
+- `payment.initiated` - Payment started
+- `payment.completed` - Payment successful
+- `payment.failed` - Payment failed
+- `payment.refunded` - Payment refunded
+
+### Inventory Events
+- `inventory.reserved` - Stock reserved
+- `inventory.released` - Stock released
+- `inventory.low` - Low stock alert
+
+## 🔧 Configuration
+
+```yaml
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: ${spring.application.name}-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+```
+
+## 📤 Publishing Events
 
 ```java
 @Service
-public class YourService {
+public class OrderEventPublisher {
     
-    private final InterServiceMessagingService messagingService;
+    @Autowired
+    private KafkaTemplate<String, OrderEvent> kafkaTemplate;
     
-    public YourService(InterServiceMessagingService messagingService) {
-        this.messagingService = messagingService;
+    public void publishOrderCreated(Order order) {
+        OrderEvent event = OrderEvent.builder()
+            .orderId(order.getId())
+            .userId(order.getUserId())
+            .total(order.getTotal())
+            .timestamp(Instant.now())
+            .build();
+            
+        kafkaTemplate.send("order-events", event);
     }
 }
 ```
 
-### 2. Send Messages
-
-#### Kafka Examples (Event Streaming)
+## 📥 Consuming Events
 
 ```java
-// Send notification event
-NotificationPayload notification = NotificationPayload.builder()
-    .title("Order Shipped")
-    .content("Your order #12345 has been shipped")
-    .recipientId("user-123")
-    .correlationId(UUID.randomUUID())
-    .build();
-
-messagingService.sendNotificationViaKafka(notification);
-
-// Send user event (fanout to multiple services)
-UserEventPayload userEvent = UserEventPayload.builder()
-    .userId(UUID.fromString("user-123"))
-    .eventType("PROFILE_UPDATED")
-    .email("user@example.com")
-    .build();
-
-messagingService.sendUserEventViaKafka(userEvent, "profile-updated");
-
-// Send analytics event with partitioning
-Map<String, Object> analyticsData = Map.of(
-    "userId", "user-123",
-    "action", "purchase",
-    "amount", 99.99
-);
-
-messagingService.sendAnalyticsEvent(analyticsData, "user-123");
+@Service
+public class InventoryEventListener {
+    
+    @KafkaListener(topics = "order-events", groupId = "inventory-service")
+    public void handleOrderCreated(OrderEvent event) {
+        // Reserve inventory for the order
+        inventoryService.reserveStock(event.getOrderId());
+    }
+}
 ```
 
-#### RabbitMQ Examples (Point-to-Point Messaging)
+## 🔄 Saga Pattern
 
-```java
-// Send order event to inventory service
-OrderEventPayload orderEvent = OrderEventPayload.builder()
-    .orderId(UUID.randomUUID())
-    .customerId(UUID.randomUUID())
-    .status("CREATED")
-    .totalAmount(new BigDecimal("99.99"))
-    .build();
+YaniQ implements the Saga pattern for distributed transactions:
 
-messagingService.sendOrderEventToInventory(orderEvent, "created");
+1. Order created → Inventory reserved
+2. Payment processed → Order confirmed
+3. If payment fails → Inventory released
 
-// Send payment event to billing service
-PaymentEventPayload paymentEvent = PaymentEventPayload.builder()
-    .paymentId(UUID.randomUUID())
-    .orderId(UUID.randomUUID())
-    .status("COMPLETED")
-    .amount(new BigDecimal("99.99"))
-    .build();
+## 📊 Monitoring
 
-messagingService.sendPaymentEventToBilling(paymentEvent, "COMPLETED");
+```bash
+# List topics
+docker exec kafka kafka-topics.sh --list --bootstrap-server localhost:9092
 
-// Send email notification with priority routing
-Map<String, Object> emailData = Map.of(
-    "to", "user@example.com",
-    "subject", "Order Confirmation",
-    "template", "order-confirmation"
-);
+# View consumer groups
+docker exec kafka kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
 
-messagingService.sendEmailNotification(emailData, "high");
+# Check consumer lag
+docker exec kafka kafka-consumer-groups.sh --describe --group inventory-service-group --bootstrap-server localhost:9092
 ```
 
-## Message Routing Patterns
+## 🔗 Related Documentation
 
-### Kafka Partitioning
+- [Architecture](/ARCHITECTURE)
+- [Services](/services)
+- [Configuration](/CONFIGURATION)
 
-Kafka messages are partitioned based on keys for:
-- **Ordering**: Messages with the same key go to the same partition
-- **Load balancing**: Even distribution across partitions
-- **Scalability**: Parallel processing by multiple consumers
+---
 
-```java
-// Partition by user ID for user events
-messagingService.sendUserEventViaKafka(userEvent, "user-updated");
+[⬆ Back to Top](#-messaging-guide) | [📖 Home](/)
+---
+layout: default
+title: Contributing
+nav_order: 10
+description: "Contributing guidelines for YaniQ platform"
+permalink: /CONTRIBUTING
+---
 
-// Partition by recipient ID for notifications
-messagingService.sendNotificationViaKafka(notification);
-```
+# 🤝 Contributing to YaniQ
 
-### RabbitMQ Routing
+Thank you for your interest in contributing to the YaniQ E-Commerce Platform! This guide will help you get started.
 
-RabbitMQ uses exchanges and routing keys for message routing:
-- **Topic Exchange**: Route based on routing key patterns
-- **Direct Exchange**: Route to queues with exact routing key match
-- **Fanout Exchange**: Broadcast to all bound queues
+## 📋 Code of Conduct
 
-```java
-// Routing key examples:
-// order.created -> routes to order creation handlers
-// order.cancelled -> routes to order cancellation handlers
-// email.high -> routes to high-priority email queue
-// email.normal -> routes to normal-priority email queue
-```
+- Be respectful and inclusive
+- Provide constructive feedback
+- Focus on what is best for the community
+- Show empathy towards other community members
 
-## Available Message Destinations
+## 🚀 Getting Started
 
-### Kafka Topics
-- `notification-events`: User notifications
-- `user-events`: User lifecycle events
-- `analytics-events`: Analytics and tracking data
-- `audit-logs`: System audit logs
-- `order-events`: Order lifecycle events
-- `cart-events`: Shopping cart events
-- `product-events`: Product catalog events
+1. **Fork the repository**
+2. **Clone your fork**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/YaniQ.git
+   cd YaniQ
+   ```
+3. **Create a feature branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+4. **Make your changes**
+5. **Test your changes**
+   ```bash
+   mvn clean test
+   ```
+6. **Commit your changes**
+   ```bash
+   git commit -m "feat: add your feature description"
+   ```
+7. **Push to your fork**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+8. **Create a Pull Request**
 
-### RabbitMQ Exchanges
-- `inventory.exchange`: Inventory management
-- `billing.exchange`: Billing and payments
-- `notifications.exchange`: Email notifications
-- `orders.exchange`: Order processing
-- `payments.exchange`: Payment processing
-- `shipping.exchange`: Shipping and delivery
+## 📝 Commit Message Convention
 
-## Configuration
+We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-The messaging system is configured in `application.yml`:
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation changes
+- `style:` - Code style changes (formatting)
+- `refactor:` - Code refactoring
+- `test:` - Adding or updating tests
+- `chore:` - Maintenance tasks
 
-```yaml
-spring:
-  cloud:
-    stream:
-      kafka:
-        binder:
-          brokers: server_ip:29092
-      rabbit:
-        binder:
-          nodes: server_ip:5672
-          username: admin
-          password: giglox123
-```
+## 🧪 Testing Requirements
 
-## Best Practices
+- Unit tests for new functionality
+- Integration tests where applicable
+- Maintain or improve code coverage
+- All tests must pass before PR approval
 
-1. **Use Kafka for**:
-   - Event streaming
-   - High-throughput scenarios
-   - When message ordering is important
-   - Analytics and logging
+## 📖 Documentation
 
-2. **Use RabbitMQ for**:
-   - Point-to-point messaging
-   - When you need complex routing
-   - Request-response patterns
-   - When message acknowledgment is critical
+- Update relevant documentation
+- Add Javadoc comments for public APIs
+- Update README if needed
+- Include examples for new features
 
-3. **Include correlation IDs** for distributed tracing
-4. **Set appropriate partition keys** for Kafka messages
-5. **Use meaningful routing keys** for RabbitMQ messages
-6. **Handle failures gracefully** with retry mechanisms
+## 🔍 Code Review Process
 
-## Error Handling
+1. Automated checks must pass (CI/CD)
+2. Code review by at least one maintainer
+3. All comments addressed
+4. Approved and merged
 
-The messaging system includes automatic retry and error handling. Failed messages are typically:
-- Retried with exponential backoff
-- Sent to dead letter queues after max retries
-- Logged for monitoring and debugging
+## 📞 Questions?
 
-## Monitoring
+- Open an issue for bugs or feature requests
+- Use GitHub Discussions for questions
+- Join our community chat
 
-Monitor your messaging infrastructure using:
-- Kafka Manager or Kafdrop for Kafka
-- RabbitMQ Management UI at http://server_ip:15672
-- Application logs for message processing status
+Thank you for contributing! 🎉
+

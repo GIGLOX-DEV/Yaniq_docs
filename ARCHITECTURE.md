@@ -1,3 +1,11 @@
+---
+layout: default
+title: Architecture
+nav_order: 6
+description: "System architecture and design patterns for YaniQ platform"
+permalink: /ARCHITECTURE
+---
+
 # 🏗️ System Architecture
 
 <div align="center">
@@ -1047,4 +1055,3 @@ flowchart TB
 [⬆ Back to Top](#-system-architecture) | [📖 Main Documentation](./README.md)
 
 </div>
-

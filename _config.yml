@@ -53,13 +53,10 @@ nav_external_links:
 # Collections
 collections:
   services:
-    permalink: "/:collection/:path/"
+    permalink: "/services/:path/"
     output: true
   libraries:
-    permalink: "/:collection/:path/"
-    output: true
-  guides:
-    permalink: "/:collection/:path/"
+    permalink: "/libraries/:path/"
     output: true
 
 # Collection defaults
@@ -77,11 +74,25 @@ defaults:
       layout: "default"
       parent: "Libraries"
   - scope:
-      path: ""
-      type: "guides"
+      path: "pages/getting-started"
+    values:
+      layout: "default"
+      parent: "Getting Started"
+  - scope:
+      path: "pages/guides"
     values:
       layout: "default"
       parent: "Guides"
+  - scope:
+      path: "pages/reference"
+    values:
+      layout: "default"
+      parent: "Reference"
+  - scope:
+      path: "pages/contributing"
+    values:
+      layout: "default"
+      parent: "Contributing"
   - scope:
       path: ""
       type: "pages"

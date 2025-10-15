@@ -1,29 +1,38 @@
-# YaniQ Documentation
+# YaniQ Documentation Site
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success?style=for-the-badge&logo=github)](https://giglox-dev.github.io/Yaniq_docs)
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.3-red?style=for-the-badge&logo=jekyll)](https://jekyllrb.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/GIGLOX-DEV/Yaniq_docs/actions)
 
-Comprehensive documentation for the YaniQ Enterprise E-Commerce Platform - A cloud-native microservices platform built with Spring Boot, Spring Cloud, and modern DevOps practices.
+Comprehensive GitHub Pages documentation for YaniQ - A cloud-native microservices-based e-commerce platform built with Spring Boot, Spring Cloud, and modern DevOps practices.
 
 ## 🌐 Live Documentation
 
-**[View Live Documentation →](https://giglox-dev.github.io/Yaniq_docs)**
+**[📖 View Live Documentation →](https://giglox-dev.github.io/Yaniq_docs)**
 
-## 📚 What's Included
+## ✨ Features
 
-This documentation covers:
+This documentation site includes:
 
-- **Getting Started** - Setup guides and quick start tutorials
-- **Architecture** - System design, patterns, and technical decisions
-- **Services** - Complete documentation for all 22+ microservices
-- **Libraries** - Shared libraries and reusable components
-- **API Reference** - REST API documentation with examples
+### 📚 Complete Documentation
+- **22 Microservices** - Detailed docs for all services
+- **14 Shared Libraries** - Reusable component documentation
+- **REST API Reference** - Complete API documentation with examples
+- **Architecture Guides** - System design and patterns
+- **Deployment Guides** - Docker, Kubernetes, cloud deployments
 - **Configuration** - Environment and service configuration
-- **Deployment** - Docker, Kubernetes, and cloud deployment guides
-- **Observability** - Monitoring, logging, and tracing
-- **Security** - Security architecture and best practices
-- **CI/CD** - Continuous integration and deployment pipelines
+- **Troubleshooting** - Common issues and solutions
+
+### 🎨 Modern Features
+- ✨ **Responsive Design** - Works on all devices
+- 🔍 **Full-text Search** - Find anything instantly
+- 🌓 **Dark/Light Mode** - Auto-switching based on preference
+- 📋 **Code Highlighting** - Syntax highlighting with copy buttons
+- 📊 **Mermaid Diagrams** - Interactive architecture diagrams
+- 🔗 **Anchor Links** - Deep linking to any section
+- ⬆️ **Back to Top** - Easy navigation
+- 🚀 **Fast Loading** - Optimized performance
 
 ## 🚀 Local Development
 

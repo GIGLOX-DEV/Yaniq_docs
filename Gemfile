@@ -6,8 +6,6 @@ gem "just-the-docs", "0.8.0"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
   gem "jekyll-seo-tag", "~> 2.8"
-  gem "jekyll-github-metadata", "~> 2.16"
-  gem "jekyll-include-cache", "~> 0.2"
   gem "jekyll-sitemap", "~> 1.4"
 end
 

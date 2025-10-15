@@ -111,13 +111,13 @@ Update these files with your specific content:
 Place your images in `assets/images/`:
 ```bash
 # Add your logo
-cp your-logo.png docs/assets/images/logo.png
+cp your-logo.png docs{{ "{{ "/assets/images/logo.png
 
 # Add favicon
-cp your-favicon.ico docs/assets/images/favicon.ico
+cp your-favicon.ico docs{{ "{{ "/assets/images/favicon.ico
 
 # Add architecture diagrams
-cp architecture-diagram.png docs/assets/images/
+cp architecture-diagram.png docs{{ "{{ "/assets/images/
 ```
 
 #### 4. Deploy to GitHub Pages
@@ -199,7 +199,7 @@ Home
 
 #### Update Theme Colors
 
-Edit `docs/assets/css/style.scss`:
+Edit `docs{{ "{{ "/assets/css/style.scss`:
 
 ```scss
 :root {

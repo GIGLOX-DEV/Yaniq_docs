@@ -1,0 +1,51 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h2 class="footer-heading">{{ site.title | escape }}</h2>
+        <p class="footer-description">{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/pages/getting-started/GETTING_STARTED.html' | relative_url }}">Getting Started</a></li>
+          <li><a href="{{ '/pages/guides/ARCHITECTURE.html' | relative_url }}">Architecture</a></li>
+          <li><a href="{{ '/services/services.html' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/LIBRARIES/libraries.html' | relative_url }}">Libraries</a></li>
+          <li><a href="{{ '/pages/guides/DEPLOYMENT.html' | relative_url }}">Deployment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="{{ '/pages/guides/CONFIGURATION.html' | relative_url }}">Configuration</a></li>
+          <li><a href="{{ '/pages/guides/TROUBLESHOOTING.html' | relative_url }}">Troubleshooting</a></li>
+          <li><a href="{{ '/pages/contributing/CONTRIBUTING.html' | relative_url }}">Contributing</a></li>
+          <li><a href="{{ site.github.repository_url }}" target="_blank" rel="noopener">GitHub Repository</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-4">
+        {%- include social.html -%}
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      {%- if site.footer_content -%}
+        <div class="footer-content">
+          {{ site.footer_content }}
+        </div>
+      {%- endif -%}
+      
+      <div class="footer-copyright">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | escape }}. All rights reserved.</p>
+        <p>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a> and 
+           <a href="https://just-the-docs.github.io/just-the-docs/" target="_blank" rel="noopener">Just the Docs</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

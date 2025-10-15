@@ -1,0 +1,40 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+
+  <!-- Mermaid for diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version | default: '10.6.1' }}/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+
+  <!-- Code copy button script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const codeBlocks = document.querySelectorAll('pre.highlight');
+      codeBlocks.forEach(function(codeBlock) {
+        const button = document.createElement('button');
+        button.className = 'copy-code-button';
+        button.textContent = 'Copy';
+        button.addEventListener('click', function() {
+          const code = codeBlock.querySelector('code').textContent;
+          navigator.clipboard.writeText(code).then(function() {
+            button.textContent = 'Copied!';
+            setTimeout(function() {
+              button.textContent = 'Copy';
+            }, 2000);
+          });
+        });
+        codeBlock.appendChild(button);
+      });
+    });
+  </script>
+</head>

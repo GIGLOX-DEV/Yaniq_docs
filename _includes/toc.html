@@ -1,0 +1,7 @@
+<!-- Table of Contents -->
+{%- if page.toc != false -%}
+<nav class="table-of-contents">
+  <h2>On this page</h2>
+  {{ content | toc_only }}
+</nav>
+{%- endif -%}

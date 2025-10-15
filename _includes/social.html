@@ -1,0 +1,19 @@
+<ul class="social-media-list">
+  {%- if site.github.repository_url -%}
+    <li>
+      <a href="{{ site.github.repository_url }}" target="_blank" rel="noopener noreferrer" title="GitHub">
+        {%- include icon-github.html -%}
+        <span class="username">{{ site.github.repository_name | default: "GitHub" }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  
+  {%- if site.twitter_username -%}
+    <li>
+      <a href="https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}" target="_blank" rel="noopener noreferrer" title="Twitter">
+        {%- include icon-twitter.html -%}
+        <span class="username">{{ site.twitter_username | escape }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>

@@ -12,20 +12,20 @@ Comprehensive documentation and guides for working with the YaniQ e-commerce pla
 
 ## Architecture & Design
 
-- [**Architecture Overview**](ARCHITECTURE.html) - System design, patterns, and components
+- [**Architecture Overview**](pages/guides/ARCHITECTURE.html) - System design, patterns, and components
 - [**Messaging Guide**](MESSAGING_GUIDE.html) - Event-driven architecture and messaging
 
 ## Configuration & Deployment
 
-- [**Configuration Guide**](CONFIGURATION.html) - Service and environment configuration
-- [**Deployment Guide**](DEPLOYMENT.html) - Docker, Kubernetes, and cloud deployment
+- [**Configuration Guide**](pages/guides/CONFIGURATION.html) - Service and environment configuration
+- [**Deployment Guide**](pages/guides/DEPLOYMENT.html) - Docker, Kubernetes, and cloud deployment
 
 ## Operations & Monitoring
 
 - [**Operations Guide**](operations.html) - Day-to-day operations and maintenance
 - [**Observability**](observability.html) - Monitoring, logging, and tracing
 - [**Security**](security.html) - Security best practices and configuration
-- [**Troubleshooting**](TROUBLESHOOTING.html) - Common issues and solutions
+- [**Troubleshooting**](pages/guides/TROUBLESHOOTING.html) - Common issues and solutions
 
 ## Infrastructure & DevOps
 
@@ -34,10 +34,10 @@ Comprehensive documentation and guides for working with the YaniQ e-commerce pla
 
 ## Additional Resources
 
-- [API Documentation](../reference/api-documentation.html)
+- [API Documentation](../reference/pages/reference/api-documentation.html)
 - [Services Overview](../../services/services.html)
 - [Libraries Documentation](../../LIBRARIES/libraries.html)
-- [Contributing Guide](../contributing/CONTRIBUTING.html)
+- [Contributing Guide](../contributing/pages/contributing/CONTRIBUTING.html)
 
 ---
 

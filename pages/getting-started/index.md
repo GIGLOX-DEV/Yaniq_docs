@@ -12,7 +12,7 @@ Welcome to YaniQ! This section will help you get up and running quickly.
 
 ## Quick Start Guide
 
-Follow our comprehensive [Getting Started Guide](GETTING_STARTED.html) to:
+Follow our comprehensive [Getting Started Guide](pages/getting-started/GETTING_STARTED.html) to:
 
 - Set up your development environment
 - Install required dependencies
@@ -39,11 +39,11 @@ Before starting, ensure you have:
 
 ## Next Steps
 
-1. [Read the Getting Started Guide](GETTING_STARTED.html)
-2. [Explore the Architecture](../guides/ARCHITECTURE.html)
+1. [Read the Getting Started Guide](pages/getting-started/GETTING_STARTED.html)
+2. [Explore the Architecture](../guides/pages/guides/ARCHITECTURE.html)
 3. [Review Service Documentation](../../services/services.html)
-4. [Configure Your Environment](../guides/CONFIGURATION.html)
+4. [Configure Your Environment](../guides/pages/guides/CONFIGURATION.html)
 
 ---
 
-For any issues, check our [Troubleshooting Guide](../guides/TROUBLESHOOTING.html).
+For any issues, check our [Troubleshooting Guide](../guides/pages/guides/TROUBLESHOOTING.html).

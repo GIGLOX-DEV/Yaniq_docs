@@ -99,18 +99,18 @@ All internal links have been updated to reflect the new structure:
 ### URL Structure
 
 **Getting Started:**
-- `https://yoursite.com/pages/getting-started/GETTING_STARTED.html`
+- `https://yoursite.com/pages/getting-started/pages/getting-started/GETTING_STARTED.html`
 
 **Guides:**
-- `https://yoursite.com/pages/guides/ARCHITECTURE.html`
-- `https://yoursite.com/pages/guides/CONFIGURATION.html`
-- `https://yoursite.com/pages/guides/DEPLOYMENT.html`
+- `https://yoursite.com/pages/guides/pages/guides/ARCHITECTURE.html`
+- `https://yoursite.com/pages/guides/pages/guides/CONFIGURATION.html`
+- `https://yoursite.com/pages/guides/pages/guides/DEPLOYMENT.html`
 
 **Reference:**
-- `https://yoursite.com/pages/reference/api-documentation.html`
+- `https://yoursite.com/pages/reference/pages/reference/api-documentation.html`
 
 **Contributing:**
-- `https://yoursite.com/pages/contributing/CONTRIBUTING.html`
+- `https://yoursite.com/pages/contributing/pages/contributing/CONTRIBUTING.html`
 
 **Services:**
 - `https://yoursite.com/services/services.html`

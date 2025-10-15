@@ -12,7 +12,7 @@ Complete API reference and technical documentation for the YaniQ platform.
 
 ## API Documentation
 
-- [**REST API Reference**](api-documentation.html) - Complete API documentation for all microservices
+- [**REST API Reference**](pages/reference/api-documentation.html) - Complete API documentation for all microservices
 - [**Documentation Index**](DOCUMENTATION_INDEX.html) - Complete documentation catalog
 - [**Managed Documentation**](managed-documentation.html) - Documentation management guide
 
@@ -43,16 +43,16 @@ All APIs follow consistent standards:
 
 ## Quick Links
 
-- [Getting Started](../getting-started/GETTING_STARTED.html)
-- [Architecture Guide](../guides/ARCHITECTURE.html)
+- [Getting Started](../getting-started/pages/getting-started/GETTING_STARTED.html)
+- [Architecture Guide](../guides/pages/guides/ARCHITECTURE.html)
 - [Services Documentation](../../services/services.html)
-- [Configuration](../guides/CONFIGURATION.html)
+- [Configuration](../guides/pages/guides/CONFIGURATION.html)
 
 ## Testing APIs
 
 - Use the [Swagger UI](http://localhost:8080/swagger-ui.html) for interactive testing
 - Download our [Postman Collection](#) for offline testing
-- Review [API examples](api-documentation.html) in the documentation
+- Review [API examples](pages/reference/api-documentation.html) in the documentation
 
 ---
 

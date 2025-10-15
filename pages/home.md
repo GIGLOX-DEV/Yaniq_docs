@@ -13,12 +13,12 @@ Welcome to the comprehensive documentation for YaniQ - A cloud-native microservi
 ## 🚀 Quick Navigation
 
 <div class="quick-links">
-  <a href="{{ '/pages/getting-started/GETTING_STARTED.html' | relative_url }}" class="quick-link">
+  <a href="{{ '/pages/getting-started/pages/getting-started/GETTING_STARTED.html' | relative_url }}" class="quick-link">
     <strong>🎯 Getting Started</strong>
     <p>Setup and quick start guide</p>
   </a>
   
-  <a href="{{ '/pages/guides/ARCHITECTURE.html' | relative_url }}" class="quick-link">
+  <a href="{{ '/pages/guides/pages/guides/ARCHITECTURE.html' | relative_url }}" class="quick-link">
     <strong>🏗️ Architecture</strong>
     <p>System design and patterns</p>
   </a>
@@ -33,12 +33,12 @@ Welcome to the comprehensive documentation for YaniQ - A cloud-native microservi
     <p>14 shared libraries</p>
   </a>
   
-  <a href="{{ '/pages/reference/api-documentation.html' | relative_url }}" class="quick-link">
+  <a href="{{ '/pages/reference/pages/reference/api-documentation.html' | relative_url }}" class="quick-link">
     <strong>📡 API Reference</strong>
     <p>Complete REST API docs</p>
   </a>
   
-  <a href="{{ '/pages/guides/DEPLOYMENT.html' | relative_url }}" class="quick-link">
+  <a href="{{ '/pages/guides/pages/guides/DEPLOYMENT.html' | relative_url }}" class="quick-link">
     <strong>🚢 Deployment</strong>
     <p>Docker, K8s, and cloud</p>
   </a>
@@ -51,7 +51,7 @@ Welcome to the comprehensive documentation for YaniQ - A cloud-native microservi
 
 Quick start guides and tutorials to get you up and running with YaniQ.
 
-- [Getting Started Guide](pages/getting-started/GETTING_STARTED.html)
+- [Getting Started Guide](pages/getting-started/pages/getting-started/GETTING_STARTED.html)
 - System prerequisites
 - Local development setup
 - First deployment
@@ -61,11 +61,11 @@ Quick start guides and tutorials to get you up and running with YaniQ.
 
 Comprehensive guides for all aspects of the platform.
 
-- [Architecture Overview](pages/guides/ARCHITECTURE.html)
-- [Configuration Guide](pages/guides/CONFIGURATION.html)
-- [Deployment Guide](pages/guides/DEPLOYMENT.html)
+- [Architecture Overview](pages/guides/pages/guides/ARCHITECTURE.html)
+- [Configuration Guide](pages/guides/pages/guides/CONFIGURATION.html)
+- [Deployment Guide](pages/guides/pages/guides/DEPLOYMENT.html)
 - [Messaging Guide](pages/guides/MESSAGING_GUIDE.html)
-- [Troubleshooting](pages/guides/TROUBLESHOOTING.html)
+- [Troubleshooting](pages/guides/pages/guides/TROUBLESHOOTING.html)
 - [Security](pages/guides/security.html)
 - [Observability](pages/guides/observability.html)
 - [Operations](pages/guides/operations.html)
@@ -113,7 +113,7 @@ Shared libraries and reusable components.
 
 Complete REST API documentation.
 
-- [API Documentation](pages/reference/api-documentation.html)
+- [API Documentation](pages/reference/pages/reference/api-documentation.html)
 - [Documentation Index](pages/reference/DOCUMENTATION_INDEX.html)
 - Authentication & Authorization
 - All service endpoints
@@ -124,7 +124,7 @@ Complete REST API documentation.
 
 How to contribute to YaniQ.
 
-- [Contributing Guide](pages/contributing/CONTRIBUTING.html)
+- [Contributing Guide](pages/contributing/pages/contributing/CONTRIBUTING.html)
 - [Quick Reference](pages/contributing/QUICK_REFERENCE.html)
 - [Setup Guide](pages/contributing/SETUP_COMPLETE.html)
 - [Developer Help](pages/contributing/Dev-Help.html)
@@ -168,7 +168,7 @@ cd apps/gateway-service
 mvn spring-boot:run
 ```
 
-See the [Getting Started Guide](pages/getting-started/GETTING_STARTED.html) for detailed instructions.
+See the [Getting Started Guide](pages/getting-started/pages/getting-started/GETTING_STARTED.html) for detailed instructions.
 
 ## 📊 Platform Statistics
 

@@ -12,7 +12,7 @@ Thank you for your interest in contributing to YaniQ! This section contains all 
 
 ## Contribution Guides
 
-- [**Contributing Guide**](CONTRIBUTING.html) - How to contribute code, documentation, and more
+- [**Contributing Guide**](pages/contributing/CONTRIBUTING.html) - How to contribute code, documentation, and more
 - [**Quick Reference**](QUICK_REFERENCE.html) - Quick reference for common tasks
 - [**Setup Guide**](SETUP_COMPLETE.html) - Complete setup instructions
 - [**Developer Help**](Dev-Help.html) - Development tips and tricks
@@ -90,13 +90,13 @@ git push origin feature/my-feature
 ## Community Guidelines
 
 - Be respectful and inclusive
-- Follow the [Code of Conduct](CONTRIBUTING.html)
+- Follow the [Code of Conduct](pages/contributing/CONTRIBUTING.html)
 - Help others in discussions
 - Provide constructive feedback
 
 ## Questions?
 
-- Check [Troubleshooting Guide](../guides/TROUBLESHOOTING.html)
+- Check [Troubleshooting Guide](../guides/pages/guides/TROUBLESHOOTING.html)
 - Open a [Discussion](https://github.com/GIGLOX-DEV/YaniQ/discussions)
 - Contact the maintainers
 

@@ -339,7 +339,7 @@ GET /api/v3/api-docs
 
 Import the Postman collection for quick API testing:
 
-1. Download collection: [YaniQ API Collection](.{{ "{{ "{{ "/assets/YaniQ-API-Collection.json)
+1. Download collection: [YaniQ API Collection]({{ "/assets/YaniQ-API-Collection.json" | relative_url }})
 2. Import into Postman
 3. Set environment variables:
    - `baseUrl`: `http://localhost:8080`
